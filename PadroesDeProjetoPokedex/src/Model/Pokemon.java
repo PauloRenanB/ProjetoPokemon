@@ -53,9 +53,23 @@ public class Pokemon implements MegaEvoluir {
 
     @Override
     public void megaEvoluir() {
-        this.ataque = this.ataque * 2;
-        this.defesa = this.defesa * 2;
-        this.vida = this.vida * 2;
-        this.ataqueEspecial = 100;
+
+        if (this.nome == "Charizard" || this.nome == "Blastoise" || this.nome == "Venusaur"){
+            this.ataque = this.ataque * 2;
+            this.defesa = this.defesa * 2;
+            this.vida = this.vida * 2;
+
+            if (this.nome == "Charizard"){
+                this.ataqueEspecial = 100;
+            }
+            if (this.nome == "Blastoise"){
+                this.ataqueEspecial = 70;
+            }
+            if (this.nome == "Venusaur"){
+                this.ataqueEspecial = 80;
+            }
+        } else {
+            System.out.println("Este pokémon não possui mega evolução!");
+        }
     }
 }
